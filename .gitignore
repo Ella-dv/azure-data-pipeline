@@ -1,0 +1,11 @@
+# Virtual Environments
+venv/
+__pycache__/
+
+# Credentials and Secrets
+.env
+local.settings.json
+
+# Local Data and Temp Files
+temp_raw.json
+temp_silver_parquet/

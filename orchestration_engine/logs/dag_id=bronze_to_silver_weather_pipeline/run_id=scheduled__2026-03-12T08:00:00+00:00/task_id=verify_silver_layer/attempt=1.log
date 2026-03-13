@@ -1,0 +1,17 @@
+[2026-03-13T08:00:11.286+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bronze_to_silver_weather_pipeline.verify_silver_layer scheduled__2026-03-12T08:00:00+00:00 [queued]>
+[2026-03-13T08:00:11.292+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bronze_to_silver_weather_pipeline.verify_silver_layer scheduled__2026-03-12T08:00:00+00:00 [queued]>
+[2026-03-13T08:00:11.292+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2026-03-13T08:00:11.300+0000] {taskinstance.py:2214} INFO - Executing <Task(BashOperator): verify_silver_layer> on 2026-03-12 08:00:00+00:00
+[2026-03-13T08:00:11.307+0000] {standard_task_runner.py:60} INFO - Started process 2140 to run task
+[2026-03-13T08:00:11.314+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'bronze_to_silver_weather_pipeline', 'verify_silver_layer', 'scheduled__2026-03-12T08:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/weather_pipeline_dag.py', '--cfg-path', '/tmp/tmpaqm85mi4']
+[2026-03-13T08:00:11.317+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask verify_silver_layer
+[2026-03-13T08:00:11.363+0000] {task_command.py:423} INFO - Running <TaskInstance: bronze_to_silver_weather_pipeline.verify_silver_layer scheduled__2026-03-12T08:00:00+00:00 [running]> on host c660d1418440
+[2026-03-13T08:00:11.424+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='bronze_to_silver_weather_pipeline' AIRFLOW_CTX_TASK_ID='verify_silver_layer' AIRFLOW_CTX_EXECUTION_DATE='2026-03-12T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-12T08:00:00+00:00'
+[2026-03-13T08:00:11.426+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-13T08:00:11.427+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "Querying Parquet file to ensure temperature_celsius is not null..." && sleep 1']
+[2026-03-13T08:00:11.441+0000] {subprocess.py:86} INFO - Output:
+[2026-03-13T08:00:11.443+0000] {subprocess.py:93} INFO - Querying Parquet file to ensure temperature_celsius is not null...
+[2026-03-13T08:00:12.446+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-03-13T08:00:12.475+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=bronze_to_silver_weather_pipeline, task_id=verify_silver_layer, execution_date=20260312T080000, start_date=20260313T080011, end_date=20260313T080012
+[2026-03-13T08:00:12.525+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-13T08:00:12.540+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

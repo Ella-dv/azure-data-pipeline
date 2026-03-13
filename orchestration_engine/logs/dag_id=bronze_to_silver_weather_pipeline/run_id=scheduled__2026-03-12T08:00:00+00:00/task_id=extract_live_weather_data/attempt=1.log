@@ -1,0 +1,17 @@
+[2026-03-13T08:00:02.525+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bronze_to_silver_weather_pipeline.extract_live_weather_data scheduled__2026-03-12T08:00:00+00:00 [queued]>
+[2026-03-13T08:00:02.530+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bronze_to_silver_weather_pipeline.extract_live_weather_data scheduled__2026-03-12T08:00:00+00:00 [queued]>
+[2026-03-13T08:00:02.530+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2026-03-13T08:00:02.538+0000] {taskinstance.py:2214} INFO - Executing <Task(BashOperator): extract_live_weather_data> on 2026-03-12 08:00:00+00:00
+[2026-03-13T08:00:02.544+0000] {standard_task_runner.py:60} INFO - Started process 2132 to run task
+[2026-03-13T08:00:02.547+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'bronze_to_silver_weather_pipeline', 'extract_live_weather_data', 'scheduled__2026-03-12T08:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/weather_pipeline_dag.py', '--cfg-path', '/tmp/tmpfxsdr_qz']
+[2026-03-13T08:00:02.549+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask extract_live_weather_data
+[2026-03-13T08:00:02.597+0000] {task_command.py:423} INFO - Running <TaskInstance: bronze_to_silver_weather_pipeline.extract_live_weather_data scheduled__2026-03-12T08:00:00+00:00 [running]> on host c660d1418440
+[2026-03-13T08:00:02.652+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='bronze_to_silver_weather_pipeline' AIRFLOW_CTX_TASK_ID='extract_live_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-12T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-12T08:00:00+00:00'
+[2026-03-13T08:00:02.655+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-13T08:00:02.656+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "Sending HTTP trigger to Azure Function to fetch Open-Meteo API data..." && sleep 2']
+[2026-03-13T08:00:02.666+0000] {subprocess.py:86} INFO - Output:
+[2026-03-13T08:00:02.668+0000] {subprocess.py:93} INFO - Sending HTTP trigger to Azure Function to fetch Open-Meteo API data...
+[2026-03-13T08:00:04.677+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-03-13T08:00:04.718+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=bronze_to_silver_weather_pipeline, task_id=extract_live_weather_data, execution_date=20260312T080000, start_date=20260313T080002, end_date=20260313T080004
+[2026-03-13T08:00:04.762+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-13T08:00:04.800+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check
